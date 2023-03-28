@@ -3,19 +3,19 @@ export const Header = () => {
   const location = useLocation();
   return (
     <div className="tabs justify-end tabs-boxed">
-      <Link to={"/"}>
-        <a className={`tab ${location.pathname == "/" ? "tab-active" : ""}`}>
+      <Link to="/">
+        <div className={`tab ${location.pathname === "/" ? "tab-active" : ""}`}>
           Home
-        </a>
+        </div>
       </Link>
-      <Link to={"/Favorites"}>
-        <a
+      <Link to="/Favorites">
+        <div
           className={`tab ${
-            location.pathname == "/Favorites" ? "tab-active" : ""
+            location.pathname === "/Favorites" ? "tab-active" : ""
           }`}
         >
           Favorites
-        </a>
+        </div>
       </Link>
     </div>
   );
