@@ -10,11 +10,6 @@ export const UserDetail = () => {
   useEffect(() => {
     getUser();
   }, []);
-
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
-
   const { user_id } = useParams();
 
   const getUser = () => {
