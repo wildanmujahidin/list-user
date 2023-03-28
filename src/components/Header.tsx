@@ -8,10 +8,10 @@ export const Header = () => {
           Home
         </div>
       </Link>
-      <Link to="/Favorites">
+      <Link to="/favorites">
         <div
           className={`tab ${
-            location.pathname === "/Favorites" ? "tab-active" : ""
+            location.pathname === "/favorites" ? "tab-active" : ""
           }`}
         >
           Favorites

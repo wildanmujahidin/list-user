@@ -15,7 +15,7 @@ export const CardContent: FC<UsersType> = ({
 }) => {
   return (
     <Card>
-      <Card.Image src={`https://robohash.org/${id}`} alt="Shoes" />
+      <Card.Image src={`https://robohash.org/${id}`} alt="image_profile" />
       <Card.Body>
         <Card.Title tag="h2">{name}</Card.Title>
         <p>{email}</p>

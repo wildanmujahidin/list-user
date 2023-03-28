@@ -11,10 +11,6 @@ export const Homepage = () => {
     getUsers();
   }, []);
 
-  useEffect(() => {
-    console.log(users);
-  }, [users]);
-
   const getUsers = () => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")

@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
 import { Favorites } from "../pages/Favorites";
 import { Homepage } from "../pages/Homepage";
+import { UserDetail } from "../pages/UserDetail";
 import "../styles/App.css";
 
 function App() {
@@ -12,8 +13,12 @@ function App() {
       element: <Homepage />,
     },
     {
-      path: "/Favorites",
+      path: "/favorites",
       element: <Favorites />,
+    },
+    {
+      path: "/users/:user_id",
+      element: <UserDetail />,
     },
   ]);
 
