@@ -33,6 +33,7 @@ export const Homepage = () => {
             phone={user.phone}
             username={user.username}
             website={user.website}
+            company={user.company}
           />
         ))}
       </div>
