@@ -23,7 +23,7 @@ export const Homepage = () => {
   };
   return (
     <Layout>
-      <div className="grid grid-cols-4 gap-3 p-3">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 p-3">
         {users.map((user, index) => (
           <CardContent
             key={index}
