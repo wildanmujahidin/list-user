@@ -1,10 +1,12 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Card, Button } from "react-daisyui";
 import { MdFavorite } from "react-icons/md";
 import { FaComment } from "react-icons/fa";
 import { IoArrowRedo } from "react-icons/io5";
 import { UsersType } from "../utils/types/users";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavorites, removeFromFavorites } from "../utils/reducers/reducer";
 
 export const CardContent: FC<UsersType> = ({
   email,
@@ -14,8 +16,26 @@ export const CardContent: FC<UsersType> = ({
   username,
   website,
   company,
+  user,
 }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const favorites = useSelector((state: any) => state.data.favorites);
+  useEffect(() => {
+    console.log(favorites);
+  }, [favorites]);
+
+  const handleAddFavorite = () => {
+    const favoriteIndex = favorites.findIndex(
+      (favorite: UsersType) => favorite.id === user.id
+    );
+    if (favoriteIndex >= 0) {
+      dispatch(removeFromFavorites(user));
+    } else {
+      dispatch(addToFavorites(user));
+    }
+  };
   return (
     <Card>
       <Card.Image
@@ -33,6 +53,7 @@ export const CardContent: FC<UsersType> = ({
           <MdFavorite
             size={"1.3rem"}
             className="hover:cursor-pointer hover:text-slate-500"
+            onClick={handleAddFavorite}
           />
           <FaComment
             size={"1.3rem"}

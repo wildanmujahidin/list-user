@@ -15,8 +15,16 @@ const sliceState = createSlice({
   name: "state",
   initialState: initialState,
   reducers: {
-    setFavorites: (state, action) => {
-      state.favorites = action.payload;
+    addToFavorites: (state, action) => {
+      console.log("add");
+      state.favorites.push(action.payload);
+    },
+    removeFromFavorites: (state, action) => {
+      console.log("remove");
+
+      state.favorites = state.favorites.filter(
+        (item) => item.id !== action.payload.id
+      );
     },
     setdarkMode: (state, action) => {
       state.darkMode = action.payload;
@@ -28,5 +36,6 @@ const reducer = {
   state: sliceState.reducer,
 };
 
-export const { setFavorites, setdarkMode } = sliceState.actions;
+export const { setdarkMode, addToFavorites, removeFromFavorites } =
+  sliceState.actions;
 export default reducer;

@@ -20,4 +20,5 @@ export interface UsersType {
       lng: string;
     };
   };
+  user: any;
 }

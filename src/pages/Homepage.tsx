@@ -34,6 +34,7 @@ export const Homepage = () => {
             username={user.username}
             website={user.website}
             company={user.company}
+            user={user}
           />
         ))}
       </div>
